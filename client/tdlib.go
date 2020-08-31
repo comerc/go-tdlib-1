@@ -1,8 +1,10 @@
 package client
 
 /*
+#cgo linux CFLAGS: -I./tdlib/include/
+#cgo linux LDFLAGS: -L./tdlib/lib -ltdjson_static -ltdjson_private -ltdclient -ltdcore -ltdapi -ltdactor -ltddb -ltdsqlite -ltdnet -ltdutils -lstdc++ -lssl -lcrypto -ldl -lz -lm
 #include <stdlib.h>
-#include <td/telegram/td_json_client.h>
+#include "td/telegram/td_json_client.h"
 */
 import "C"
 
