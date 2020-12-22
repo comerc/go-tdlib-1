@@ -1,3 +1,3 @@
-module github.com/nrdhm/go-tdlib
+module github.com/astravexton/go-tdlib
 
-go 1.12
+go 1.15
