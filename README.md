@@ -1,6 +1,6 @@
 # go-tdlib
 
-Go wrapper for [TDLib (Telegram Database Library)](https://github.com/tdlib/td) with full support of TDLib v1.6.0
+Go wrapper for [TDLib (Telegram Database Library)](https://github.com/tdlib/td) with full support of TDLib v1.7.0
 
 ## TDLib installation
 
@@ -19,7 +19,7 @@ import (
     "log"
     "path/filepath"
 
-    "github.com/zelenin/go-tdlib/client"
+    "github.com/astravexton/go-tdlib/client"
 )
 
 func main() {
