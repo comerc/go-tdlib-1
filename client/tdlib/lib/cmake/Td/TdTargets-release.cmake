@@ -58,12 +58,12 @@ list(APPEND _IMPORT_CHECK_FILES_FOR_Td::tddb "${_IMPORT_PREFIX}/lib/libtddb.a" )
 # Import target "Td::tdjson" for configuration "Release"
 set_property(TARGET Td::tdjson APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(Td::tdjson PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libtdjson.so.1.6.8"
-  IMPORTED_SONAME_RELEASE "libtdjson.so.1.6.8"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libtdjson.so.1.7.0"
+  IMPORTED_SONAME_RELEASE "libtdjson.so.1.7.0"
   )
 
 list(APPEND _IMPORT_CHECK_TARGETS Td::tdjson )
-list(APPEND _IMPORT_CHECK_FILES_FOR_Td::tdjson "${_IMPORT_PREFIX}/lib/libtdjson.so.1.6.8" )
+list(APPEND _IMPORT_CHECK_FILES_FOR_Td::tdjson "${_IMPORT_PREFIX}/lib/libtdjson.so.1.7.0" )
 
 # Import target "Td::tdjson_static" for configuration "Release"
 set_property(TARGET Td::tdjson_static APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)

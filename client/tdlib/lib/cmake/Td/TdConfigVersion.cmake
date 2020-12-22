@@ -9,12 +9,19 @@
 # The variable CVF_VERSION must be set before calling configure_file().
 
 
-set(PACKAGE_VERSION "1.6.8")
+if (PACKAGE_FIND_VERSION_RANGE)
+  message(AUTHOR_WARNING
+    "`find_package()` specify a version range but the version strategy "
+    "(ExactVersion) of the module `${PACKAGE_FIND_NAME}` is incompatible "
+    "with this request. Only the lower endpoint of the range will be used.")
+endif()
 
-if("1.6.8" MATCHES "^([0-9]+\\.[0-9]+\\.[0-9]+)\\.") # strip the tweak version
+set(PACKAGE_VERSION "1.7.0")
+
+if("1.7.0" MATCHES "^([0-9]+\\.[0-9]+\\.[0-9]+)\\.") # strip the tweak version
   set(CVF_VERSION_NO_TWEAK "${CMAKE_MATCH_1}")
 else()
-  set(CVF_VERSION_NO_TWEAK "1.6.8")
+  set(CVF_VERSION_NO_TWEAK "1.7.0")
 endif()
 
 if(PACKAGE_FIND_VERSION MATCHES "^([0-9]+\\.[0-9]+\\.[0-9]+)\\.") # strip the tweak version

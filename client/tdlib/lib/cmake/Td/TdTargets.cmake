@@ -4,7 +4,7 @@ if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.5)
    message(FATAL_ERROR "CMake >= 2.6.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.6)
+cmake_policy(VERSION 2.6...3.17)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -54,7 +54,7 @@ endif()
 add_library(Td::tdutils STATIC IMPORTED)
 
 set_target_properties(Td::tdutils PROPERTIES
-  INTERFACE_LINK_LIBRARIES "-pthread;/usr/lib/x86_64-linux-gnu/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/x86_64-linux-gnu/libz.so;/usr/lib/x86_64-linux-gnu/libz.so"
+  INTERFACE_LINK_LIBRARIES "-pthread;/usr/lib/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/libz.so;/usr/lib/libz.so"
 )
 
 # Create imported target Td::tdactor
@@ -68,14 +68,14 @@ set_target_properties(Td::tdactor PROPERTIES
 add_library(Td::tdnet STATIC IMPORTED)
 
 set_target_properties(Td::tdnet PROPERTIES
-  INTERFACE_LINK_LIBRARIES "Td::tdutils;Td::tdactor;\$<LINK_ONLY:dl>;/usr/lib/x86_64-linux-gnu/libz.so;/usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so"
+  INTERFACE_LINK_LIBRARIES "Td::tdutils;Td::tdactor;/usr/lib/libssl.so;/usr/lib/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/libz.so"
 )
 
 # Create imported target Td::tdsqlite
 add_library(Td::tdsqlite STATIC IMPORTED)
 
 set_target_properties(Td::tdsqlite PROPERTIES
-  INTERFACE_LINK_LIBRARIES "/usr/lib/x86_64-linux-gnu/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/x86_64-linux-gnu/libz.so"
+  INTERFACE_LINK_LIBRARIES "/usr/lib/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/libz.so"
 )
 
 # Create imported target Td::tddb
@@ -138,7 +138,7 @@ add_library(Td::tdcore STATIC IMPORTED)
 
 set_target_properties(Td::tdcore PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "Td::tdapi;Td::tdactor;Td::tdutils;Td::tdnet;Td::tddb;/usr/lib/x86_64-linux-gnu/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/x86_64-linux-gnu/libz.so"
+  INTERFACE_LINK_LIBRARIES "Td::tdapi;Td::tdactor;Td::tdutils;Td::tdnet;Td::tddb;/usr/lib/libcrypto.so;\$<LINK_ONLY:dl>;/usr/lib/libz.so"
 )
 
 # Create imported target Td::tdapi
